@@ -7,14 +7,21 @@ import htmlmin from 'gulp-htmlmin'
 import dartSass from 'sass'
 import gulpSass from 'gulp-sass'
 import postcss from 'gulp-postcss'
+import cleancss from 'gulp-clean-css';
 import rename from 'gulp-rename'
 import autoprefixer from 'autoprefixer'
 import sourcemaps from 'gulp-sourcemaps'
 const sass = gulpSass(dartSass);
+// JS
+import babel from 'gulp-babel';
+import terser from 'gulp-terser';
+import concat from 'gulp-concat';
 // BROWSERSYNC
 import {init as server, stream, reload} from 'browser-sync'
 // IMGAGES
 import imagemin from 'gulp-imagemin'
+// DELETE
+import del from 'del';
 
 const source = 'sources/'
 const output = 'app/'
@@ -30,15 +37,15 @@ const paths = {
     scssWatch: `${source}scss/**/*.scss`,
     dest: `${output}css`
   },
-  // js: {
-    //   jsSources: ['src/assets/js/src/*.js'],
-    //   jsMain: 'src/assets/js/main.js',
-    //   dest: `${output}js`
-    // },
+  js: {
+    jsSources: `${source}js/src/*`,
+    jsMain: `${source}js/main.js`,
+    dest: `${output}js`
+  },
     images: {
-      files: `${source}images/*`,
-      dest: `${output}img`
-    },
+    files: `${source}images/*`,
+    dest: `${output}img`
+  },
     // fonts: {
   //   files: 'src/assets/fonts/**',
   //   dest: `${output}fonts`
@@ -48,6 +55,8 @@ const paths = {
   //   dest: 'public/'
   // }
 }
+
+task('clean', () => del(['app']))
 
 task('html', () => {
   return src(paths.html.htmlFile)
@@ -72,6 +81,30 @@ task('styles', () => {
   .pipe(stream())
 })
 
+task('mainJs', () => {
+  return(src(paths.js.jsMain))
+  .pipe(plumber())
+  .pipe(babel())
+  .pipe(terser())
+  .pipe(rename('main.min.js'))
+  .pipe(dest(paths.js.dest))
+
+})
+
+task('compileCss', () => {
+  return src(paths.styles.cssSources)
+  .pipe(concat('resources.min.css'))
+  .pipe(cleancss({compatibility: 'ie8'}))
+  .pipe(dest(paths.styles.dest))
+})
+
+task('compileJs', () => {
+  return(src(paths.js.jsSources))
+  .pipe(concat('resources.min.js'))
+  .pipe(terser())
+  .pipe(dest(paths.js.dest))
+})
+
 task('img-minify', () => {
   return src(paths.images.files)
   .pipe(imagemin([
@@ -94,9 +127,9 @@ task('startServer', (done) => {
 task('watch', () => {
   watch(paths.html.htmlFile, series('html')).on('change', reload)
   watch(paths.styles.scssWatch, series('styles'))
-  // watch(paths.styles.cssSources, series('compileCss'))
-  // watch(paths.js.jsSources, series('compileJs'))
-  // watch(paths.js.jsMain, series('mainJs')).on('change', reload)
+  watch(paths.styles.cssSources, series('compileCss'))
+  watch(paths.js.jsSources, series('compileJs'))
+  watch(paths.js.jsMain, series('mainJs')).on('change', reload)
   watch(paths.images.files, series('img-minify'))
   // watch(paths.fonts.files, series('compileFonts'))
 })
@@ -107,6 +140,8 @@ task('watch', () => {
 //   .pipe(dest(paths.package.dest))
 // })
 
-task('default', series('startServer', parallel('html', 'styles', 'img-minify'), 'watch'))
+task('default', series('clean', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs'), 'startServer', 'watch'))
+
+// task('default', series('startServer', parallel('html', 'styles', 'img-minify'), 'watch'))
 
 // task('package', series('packaged'))
