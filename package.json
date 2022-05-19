@@ -1,0 +1,32 @@
+{
+  "name": "gulp-base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "author": "Isaac Vallejo",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/register": "^7.17.7",
+    "autoprefixer": "^10.4.7",
+    "browser-sync": "^2.27.9",
+    "cssnano": "^5.1.7",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.51.0"
+  }
+}

@@ -1,0 +1,7 @@
+@use '../utilities/' as *;
+
+h1 {
+  color: $text-color;
+  text-align: center;
+  padding: 15px 0;
+}
