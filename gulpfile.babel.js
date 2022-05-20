@@ -20,8 +20,12 @@ import concat from 'gulp-concat';
 import {init as server, stream, reload} from 'browser-sync'
 // IMGAGES
 import imagemin from 'gulp-imagemin'
-// DELETE
+// PRODUCTION
+import gulpif from 'gulp-if';
 import del from 'del';
+import yargs from 'yargs'
+
+const PRODUCTION = yargs.argv.prod;
 
 const source = 'sources/'
 const output = 'app/'
@@ -50,13 +54,15 @@ const paths = {
   //   files: 'src/assets/fonts/**',
   //   dest: `${output}fonts`
   // },
-  // package: {
-  //   src: ['**/*', '!node_modules{,/**}', '!public{,/**}', '!src{,/**}', '!.babelrc', '!.browserslistrc', '!.gitignore', '!gulpfile.babel.js', '!package-lock.json', '!package.json'],
-  //   dest: 'public/'
-  // }
+  package: {
+    src: 'app/**/*',
+    dest: 'public/'
+  }
 }
 
-task('clean', () => del(['app']))
+task('cleanApp', () => del(['app']))
+
+task('clean', () => del(['public']))
 
 task('html', () => {
   return src(paths.html.htmlFile)
@@ -72,11 +78,13 @@ task('html', () => {
 task('styles', () => {
   return src(paths.styles.scss)
   .pipe(plumber())
-  .pipe(sourcemaps.init())
-  .pipe(sass({outputStyle: "compressed"}).on('error', sass.logError))
+  .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
+  .pipe(gulpif(PRODUCTION, sass({outputStyle: "compressed"}), sass({outputStyle: "expanded"}).on('error', sass.logError)))
+  // .pipe(sass({outputStyle: "compressed"}).on('error', sass.logError))
   .pipe(postcss([autoprefixer()]))
   .pipe(rename('styles.min.css'))
-  .pipe(sourcemaps.write())
+  // .pipe(gulpif(PRODUCTION, rename('styles.min.css', rename('styles.css'))))
+  .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
   .pipe(dest(paths.styles.dest))
   .pipe(stream())
 })
@@ -107,11 +115,12 @@ task('compileJs', () => {
 
 task('img-minify', () => {
   return src(paths.images.files)
-  .pipe(imagemin([
-    imagemin.mozjpeg({quality: 75, progressive: true})
-  ], {
-    verbose: true
-  }))
+  .pipe(gulpif(PRODUCTION, imagemin([imagemin.mozjpeg({quality: 75, progressive: true})],{verbose: true})))
+  // .pipe(imagemin([
+  //   imagemin.mozjpeg({quality: 75, progressive: true})
+  // ], {
+  //   verbose: true
+  // }))
   .pipe(dest(paths.images.dest))
 })
 
@@ -134,14 +143,13 @@ task('watch', () => {
   // watch(paths.fonts.files, series('compileFonts'))
 })
 
-// task('packaged', () => {
-//   return(src(paths.package.src))
-//   .pipe(zip('playas-nicaragua.zip'))
-//   .pipe(dest(paths.package.dest))
-// })
+task('packaged', () => {
+  return(src(paths.package.src))
+  .pipe(dest(paths.package.dest))
+})
 
-task('default', series('clean', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs'), 'startServer', 'watch'))
+task('default', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs'), 'clean', 'startServer', 'watch'))
 
-// task('default', series('startServer', parallel('html', 'styles', 'img-minify'), 'watch'))
+task('build', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs')))
 
-// task('package', series('packaged'))
+task('production', series('build', 'packaged'))
