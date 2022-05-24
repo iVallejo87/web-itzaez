@@ -1,0 +1,48 @@
+@use '../utilities/' as *;
+
+.contact-header {
+  background-color: $blue-itzaez;
+  &--container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 rem(16px);
+  }
+  @include media-query(lg) {
+    &--container {
+      padding: 0;
+    }
+  }
+}
+
+.contact-header-block {
+  display: flex;
+  justify-content: flex-end;
+  &--item {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    color: #ffffff;
+    margin-right: rem(16px);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &--icon {
+    display: inline-block;
+    margin-right: rem(4px);
+  }
+  &--number {
+    display: inline-block;
+    .separate-number {
+      margin-right: rem(8px);
+    }
+  }
+  &--icon-social {
+    background-color: $orange-itzaez;
+    padding: rem(8px) rem(16px);
+    .icon-facebook {
+      font-size: rem(24px);
+    }
+  }
+}

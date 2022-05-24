@@ -1,7 +1,24 @@
 
-@mixin titles {
-  // text-align: center;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 1.5rem 0;
-}
+@use 'functions' as *;
+
+// ===== ///// MEDIA QUERIES ///// ===== //
+
+$breakpoints: (
+  sm: rem(560px),
+  md: rem(768px),
+  lg: rem(992px),
+  xl: rem(1200px),
+  xxl: rem(1600px)
+);
+
+@mixin media-query($breakpoint) {
+  @if map-has-key($breakpoints,$breakpoint) {
+    @media screen and (min-width: map-get($breakpoints,$breakpoint)) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  }
+};

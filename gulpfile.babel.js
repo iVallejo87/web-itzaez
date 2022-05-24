@@ -50,10 +50,10 @@ const paths = {
     files: `${source}images/*`,
     dest: `${output}img`
   },
-    // fonts: {
-  //   files: 'src/assets/fonts/**',
-  //   dest: `${output}fonts`
-  // },
+    fonts: {
+    files: `${source}webfonts/*`,
+    dest: `${output}webfonts`
+  },
   package: {
     src: 'app/**/*',
     dest: 'public/'
@@ -77,7 +77,7 @@ task('html', () => {
 
 task('styles', () => {
   return src(paths.styles.scss)
-  .pipe(plumber())
+  // .pipe(plumber())
   .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
   .pipe(gulpif(PRODUCTION, sass({outputStyle: "compressed"}), sass({outputStyle: "expanded"}).on('error', sass.logError)))
   // .pipe(sass({outputStyle: "compressed"}).on('error', sass.logError))
@@ -113,6 +113,11 @@ task('compileJs', () => {
   .pipe(dest(paths.js.dest))
 })
 
+task('compileFonts', () => {
+  return(src(paths.fonts.files))
+  .pipe(dest(paths.fonts.dest))
+})
+
 task('img-minify', () => {
   return src(paths.images.files)
   .pipe(gulpif(PRODUCTION, imagemin([imagemin.mozjpeg({quality: 75, progressive: true})],{verbose: true})))
@@ -140,7 +145,6 @@ task('watch', () => {
   watch(paths.js.jsSources, series('compileJs'))
   watch(paths.js.jsMain, series('mainJs')).on('change', reload)
   watch(paths.images.files, series('img-minify'))
-  // watch(paths.fonts.files, series('compileFonts'))
 })
 
 task('packaged', () => {
@@ -148,8 +152,8 @@ task('packaged', () => {
   .pipe(dest(paths.package.dest))
 })
 
-task('default', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs'), 'clean', 'startServer', 'watch'))
+task('default', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs', 'compileFonts'), 'clean', 'startServer', 'watch'))
 
-task('build', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs')))
+task('build', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs', 'compileFonts')))
 
 task('production', series('build', 'packaged'))

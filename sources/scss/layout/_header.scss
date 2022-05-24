@@ -1,0 +1,17 @@
+@use '../utilities/' as *;
+
+.main-header {
+
+  @include media-query(md) {
+    background-color: tomato;
+  }
+
+  @include media-query(lg) {
+    background-color: purple;
+  }
+
+  @include media-query(xl) {
+    background-color: steelblue;
+  }
+  
+}

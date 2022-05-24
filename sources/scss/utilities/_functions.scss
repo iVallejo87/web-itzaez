@@ -1,0 +1,9 @@
+@use "sass:math";
+
+@function em($number, $parent:16px) {
+  @return calc($number / $parent) * 1em;
+}
+
+@function rem($number, $parent:16px) {
+  @return calc($number / $parent) * 1rem;
+}
