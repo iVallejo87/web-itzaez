@@ -4,13 +4,28 @@
   background-color: $blue-itzaez;
   &--container {
     width: 100%;
-    max-width: 1320px;
     margin: 0 auto;
     padding: 0 rem(16px);
+  }
+  @include media-query(md) {
+    &--container {
+      max-width: 720px;
+    }
   }
   @include media-query(lg) {
     &--container {
       padding: 0;
+      max-width: 960px;
+    }
+  }
+  @include media-query(xl) {
+    &--container {
+      max-width: 1200px;
+    }
+  }
+  @include media-query(xxl) {
+    &--container {
+      max-width: 1320px;
     }
   }
 }

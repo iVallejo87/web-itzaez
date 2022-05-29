@@ -8,7 +8,6 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 1320px;
     padding: 0 16px;
     margin: 0 auto;
   }
@@ -30,12 +29,16 @@
   }
 
   @include media-query(md) {
+    &--container {
+      max-width: 720px;
+    }
 
   }
 
   @include media-query(lg) {
     &--container {
       padding: 0;
+      max-width: 960px;
     }
     &--logo {
       width: 300px;
@@ -49,7 +52,15 @@
   }
 
   @include media-query(xl) {
-    
+    &--container {
+      max-width: 1200px;
+    }
+  }
+
+  @include media-query(xxl) {
+    &--container {
+      max-width: 1320px;
+    }
   }
   
 }
