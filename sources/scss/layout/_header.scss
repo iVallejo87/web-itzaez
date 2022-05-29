@@ -1,17 +1,68 @@
 @use '../utilities/' as *;
 
 .main-header {
+  padding: 1rem 0;
+  width: 100%;
+  position: relative;
+  &--container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1320px;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+  &--logo {
+    width: 220px;
+    a {
+      display: block;
+    }
+    .logo-menu-itzaez {
+      display: block;
+      width: 100%;
+    }
+  }
+  &--menu-bars {
+    display: flex;
+  }
+  &--menu {
+    position: absolute;
+  }
 
   @include media-query(md) {
-    background-color: tomato;
+
   }
 
   @include media-query(lg) {
-    background-color: purple;
+    &--container {
+      padding: 0;
+    }
+    &--logo {
+      width: 300px;
+    }
+    &--menu-bars {
+      display: none;
+    }
+    &--menu {
+      position: static;
+    }
   }
 
   @include media-query(xl) {
-    background-color: steelblue;
+    
   }
   
+}
+
+.icon-bars {
+  width: 48px;
+  height: 45px;
+  flex-wrap: wrap;
+  align-items: space-between;
+  &--bar {
+    display: block;
+    width: 45px;
+    height: 5px;
+    background-color: $blue-itzaez;
+  }
 }

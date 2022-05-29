@@ -4,7 +4,7 @@
   background-color: $blue-itzaez;
   &--container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1320px;
     margin: 0 auto;
     padding: 0 rem(16px);
   }
@@ -27,10 +27,17 @@
     &:last-child {
       margin-right: 0;
     }
+    &.contact-info {
+      display: none;
+      &--whatsapp {
+        display: flex;
+      }
+    }
   }
   &--icon {
     display: inline-block;
     margin-right: rem(4px);
+    font-size: rem(20px);
   }
   &--number {
     display: inline-block;
@@ -44,5 +51,22 @@
     .icon-facebook {
       font-size: rem(24px);
     }
+  }
+  @include media-query(md) {
+    &--item {
+      &.contact-info {
+        display: flex;
+      }
+    }
+  }
+
+  @include media-query(lg) {
+    &--icon {
+      font-size: rem(16px);
+    }
+  }
+
+  @include media-query(xl) {
+    
   }
 }

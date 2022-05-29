@@ -1,0 +1,29 @@
+@use '../utilities/' as *;
+
+.menu {
+  display: none;
+  &--list-menu {
+    list-style: none;
+  }
+  @include media-query(md) {
+
+  }
+  @include media-query(lg) {
+    display: flex;
+    height: 100%;
+    &--list-menu {
+      display: flex;
+      align-items: center;
+    }
+    &--item-menu {
+      color: $blue-itzaez;
+      margin-right: 1rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  @include media-query(xl) {
+
+  }
+}

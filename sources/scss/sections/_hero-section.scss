@@ -1,0 +1,28 @@
+@use '../utilities/' as *;
+
+.hero-slide {
+  min-height: 600px;
+  background-image: url("../img/img-slide-sm.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  .gradient-mesh {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0; top: 0;
+    background: linear-gradient(0deg, rgba(255,255,255,0) 65%, rgba(255,255,255,1) 100%);
+    opacity: .9;
+  }
+  @include media-query(md) {
+
+  }
+
+  @include media-query(lg) {
+    background-image: url("../img/img-slide-xl.jpg")
+  }
+
+  @include media-query(xl) {
+    
+  }
+}
