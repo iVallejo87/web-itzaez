@@ -1,0 +1,20 @@
+@use '../utilities/' as *;
+
+.partner-section {
+  padding: rem(48px) 0;
+  background: url("../img/back-partner-section.jpg") no-repeat center;
+  background-size: cover;
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000000, .6);
+    position: absolute;
+    left: 0; top: 0;
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+}

@@ -22,3 +22,9 @@ $breakpoints: (
     }
   }
 };
+
+@mixin text() {
+  font-size: rem(16px);
+  line-height: 145%;
+  letter-spacing: em(1px);
+}

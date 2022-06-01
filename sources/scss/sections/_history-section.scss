@@ -1,0 +1,27 @@
+@use '../utilities/' as *;
+
+.history-section {
+  padding: rem(56px) 0 rem(56px) 0;
+  background-color: $blue-itzaez;
+  overflow-x: hidden;
+  .ornament-left {
+    width: 200px;
+    height: 150px;
+    background-image: url("../img/ornament-history.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -100px; top: -10px;
+  }
+  .ornament-right {
+    width: 200px;
+    height: 150px;
+    background-image: url("../img/ornament-history.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -120px; bottom: -10px;
+  }
+}

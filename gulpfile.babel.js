@@ -46,14 +46,22 @@ const paths = {
     jsMain: `${source}js/main.js`,
     dest: `${output}js`
   },
-    images: {
+  images: {
     files: `${source}images/*`,
     dest: `${output}img`
   },
-    fonts: {
+  fonts: {
     files: `${source}webfonts/*`,
     dest: `${output}webfonts`
   },
+  audio: {
+    files: `${source}audio/*`,
+    dest: `${output}audio`
+},
+  video: {
+    files: `${source}video/*`,
+    dest: `${output}video`
+},
   package: {
     src: 'app/**/*',
     dest: 'public/'
@@ -91,7 +99,7 @@ task('styles', () => {
 
 task('mainJs', () => {
   return(src(paths.js.jsMain))
-  .pipe(plumber())
+  // .pipe(plumber())
   .pipe(babel())
   .pipe(terser())
   .pipe(rename('main.min.js'))
@@ -116,6 +124,16 @@ task('compileJs', () => {
 task('compileFonts', () => {
   return(src(paths.fonts.files))
   .pipe(dest(paths.fonts.dest))
+})
+
+task('compileAudio', () => {
+  return(src(paths.audio.files))
+  .pipe(dest(paths.audio.dest))
+})
+
+task('compileVideo', () => {
+  return(src(paths.video.files))
+  .pipe(dest(paths.video.dest))
 })
 
 task('img-minify', () => {
@@ -152,8 +170,8 @@ task('packaged', () => {
   .pipe(dest(paths.package.dest))
 })
 
-task('default', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs', 'compileFonts'), 'clean', 'startServer', 'watch'))
+task('default', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs', 'compileFonts', 'compileAudio', 'compileVideo'), 'clean', 'startServer', 'watch'))
 
-task('build', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs', 'compileFonts')))
+task('build', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs', 'compileFonts', 'compileAudio', 'compileVideo')))
 
 task('production', series('build', 'packaged'))

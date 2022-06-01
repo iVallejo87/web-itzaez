@@ -1,0 +1,175 @@
+@use '../utilities/' as *;
+
+// ===== ///// GENERAL ///// ===== //
+
+.slider {
+  &__item {
+    position: relative;
+  }
+  &__text {
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    left: 0; right: 0; top: 30%;
+    background-color: rgba(#ffffff, .5);
+    padding: rem(24px);
+    z-index: 2;
+  }
+  .owl-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px; left: 0;
+    width: 100%;
+    height: auto;
+    padding: rem(8px);
+    .owl-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50px;
+      background-color: rgba(#ffffff, .4);
+      margin: 0 rem(4px);
+      &.active {
+        background-color: rgba(#ffffff, .8);
+      }
+    }
+  }
+
+}
+
+// ===== ///// HERO SLIDER ///// ===== //
+
+.text-slider {
+  &__title {
+    color: $blue-itzaez;
+    margin-bottom: rem(16px);
+    line-height: 125%;
+    // text-transform: uppercase;
+  }
+  &__text {
+    color: $text-color;
+    line-height: 135%;
+  }
+}
+
+// ===== ///// HISTORY SLIDER ///// ===== //
+
+.slide-history {
+  &__title {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: rem(24px);
+    font-size: rem(24px);
+  }
+}
+
+.slider-history {
+  &__year {
+    width: 120px;
+    color: $orange-itzaez;
+    font-size: rem(48px);
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: rem(16px);
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      width: 80%;
+      height: 3px;
+      background-color: $orange-itzaez;
+      position: absolute;
+      left: 100%; top: 50%;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 80%;
+      height: 3px;
+      background-color: $orange-itzaez;
+      position: absolute;
+      right: 100%; top: 50%;
+    }
+  }
+  &__text {
+    color: #ffffff;
+    font-size: rem(16px);
+    line-height: 145%;
+    letter-spacing: em(1px);
+    padding: 0 rem(24px);
+  }
+}
+
+// ===== ///// PARTNER SLIDER ///// ===== //
+
+.slider-partner {
+  &__title {
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: rem(16px);
+    font-size: rem(18px);
+  }
+  &__text {
+    color: #ffffff;
+    text-align: center;
+    line-height: 145%;
+    letter-spacing: em(1px);
+  }
+  &__list {
+    list-style-position: inside;
+    color: #ffffff;
+    margin-bottom: rem(16px);
+    list-style: none;
+    li {
+      padding: rem(4px) 0 rem(4px) rem(16px);
+      position: relative;
+      &::before {
+        content: "\f111";
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        display: block;
+        font-size: rem(8px);
+        margin-right: rem(8px);
+        position: absolute; left: 0; top: 10px;
+      }
+    }
+  }
+  .owl-dots {
+    bottom: -20px;
+  }
+}
+
+// ===== ///// CREDIT SLIDER ///// ===== //
+
+.credit-slider {
+  margin-top: rem(48px);
+  &__title {
+    color: $red-itzaez;
+    text-transform: uppercase;
+    margin-bottom: rem(16px);
+  }
+  &__text {
+    @include text();
+  }
+  .owl-dots {
+    bottom: -40px;
+    .owl-dot {
+      // background-color: ;
+      border: 1px solid rgba($text-color, .4);
+      &.active {
+        border: 1px solid rgba($text-color, 0);
+        background-color: rgba($text-color, .6);
+      }
+    }
+  }
+}
+
+.image-slider {
+  &__img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+}

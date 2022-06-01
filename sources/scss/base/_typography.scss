@@ -1,3 +1,56 @@
 @use '../utilities/' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+// TITLES
+
+.title-section {
+  text-align: center;
+  margin-bottom: rem(24px);
+  font-size: rem(24px);
+  position: relative;
+  &--blue {
+    color: $blue-itzaez;
+  }
+  &--white {
+    color: #ffffff;
+  }
+  &--underline{
+    padding-bottom: rem(16px);
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      height: 3px;
+      margin: 0 auto;
+      background-color: $orange-itzaez;
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+    }
+  }
+}
+
+// TEXT
+
+.text-section {
+  @include text();
+  &--center {
+    text-align: center;
+  }
+  &--gray {
+    color: $text-color;
+  }
+  &--white {
+    color: #ffffff;
+  }
+  &--orange {
+    color: $orange-itzaez;
+  }
+  &--big {
+    font-size: rem(24px);
+  }
+  &--bold {
+    font-weight: 700;
+  }
+}

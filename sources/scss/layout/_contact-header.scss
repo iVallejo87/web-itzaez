@@ -2,29 +2,29 @@
 
 .contact-header {
   background-color: $blue-itzaez;
-  &--container {
+  &__container {
     width: 100%;
     margin: 0 auto;
     padding: 0 rem(16px);
   }
   @include media-query(md) {
-    &--container {
+    &__container {
       max-width: 720px;
     }
   }
   @include media-query(lg) {
-    &--container {
+    &__container {
       padding: 0;
       max-width: 960px;
     }
   }
   @include media-query(xl) {
-    &--container {
+    &__container {
       max-width: 1200px;
     }
   }
   @include media-query(xxl) {
-    &--container {
+    &__container {
       max-width: 1320px;
     }
   }
@@ -33,7 +33,7 @@
 .contact-header-block {
   display: flex;
   justify-content: flex-end;
-  &--item {
+  &__item {
     display: flex;
     text-decoration: none;
     align-items: center;
@@ -47,20 +47,23 @@
       &--whatsapp {
         display: flex;
       }
+      &--social {
+        display: flex;
+      }
     }
   }
-  &--icon {
+  &__icon {
     display: inline-block;
     margin-right: rem(4px);
     font-size: rem(20px);
   }
-  &--number {
+  &__number {
     display: inline-block;
     .separate-number {
       margin-right: rem(8px);
     }
   }
-  &--icon-social {
+  &__icon-social {
     background-color: $orange-itzaez;
     padding: rem(8px) rem(16px);
     .icon-facebook {
@@ -68,7 +71,7 @@
     }
   }
   @include media-query(md) {
-    &--item {
+    &__item {
       &.contact-info {
         display: flex;
       }
@@ -76,7 +79,7 @@
   }
 
   @include media-query(lg) {
-    &--icon {
+    &__icon {
       font-size: rem(16px);
     }
   }

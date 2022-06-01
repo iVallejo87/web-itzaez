@@ -1,0 +1,18 @@
+@use '../utilities/' as *;
+
+.video-testimonio {
+  width: 90%;
+  max-width: 600px;
+  height: 0;
+  margin: 0 auto;
+  padding-bottom: 56.25%;
+  position: relative;
+  margin-bottom: rem(24px);
+  &__video {
+    display: block;
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

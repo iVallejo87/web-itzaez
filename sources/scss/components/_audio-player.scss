@@ -1,0 +1,12 @@
+@use '../utilities/' as *;
+
+.wrap-audio-player {
+  display: flex;
+  justify-content: center;
+}
+
+.audio-player {
+  width: 100%;
+  max-width: 500px;
+}
+

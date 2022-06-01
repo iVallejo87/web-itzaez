@@ -1,0 +1,8 @@
+@use '../utilities/' as *;
+
+.section {
+  position: relative;
+  &__text {
+    margin-bottom: rem(16px);
+  }
+}

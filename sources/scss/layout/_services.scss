@@ -1,0 +1,15 @@
+@use '../utilities/' as *;
+
+.services-left {
+  &__img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+}
+
+.services-right {
+  padding: rem(48px) rem(16px) rem(64px) rem(16px);
+  background-color: $red-itzaez;
+}

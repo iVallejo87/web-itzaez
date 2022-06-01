@@ -1,0 +1,61 @@
+@use '../utilities/' as *;
+
+.cards-content {
+  margin-top: rem(48px);
+}
+
+.card-valores {
+  width: 90%;
+  padding: rem(24px) rem(16px);
+  box-shadow: 0 0 24px rgba(#2E3191, .1);
+  margin: 0 auto;
+  margin-bottom: rem(48px);
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &__icon {
+    img {
+      display: block;
+      width: 120px;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+  &__title {
+    color: $blue-itzaez;
+    text-align: center;
+    margin: rem(24px) 0;
+  }
+  &__text {
+    font-size: rem(16px);
+    line-height: 145%;
+    letter-spacing: em(1px);
+    color: $text-color;
+    text-align: center;
+  }
+}
+
+.card-ahorro {
+  @extend .card-valores;
+  &__icon {
+    img {
+      display: block;
+      width: 120px;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+  &__title {
+    color: $blue-itzaez;
+    text-align: center;
+    margin: rem(24px) 0;
+  }
+  &__text {
+    font-size: rem(16px);
+    line-height: 145%;
+    letter-spacing: em(1px);
+    color: $text-color;
+    text-align: center;
+    margin-bottom: rem(16px);
+  }
+}
