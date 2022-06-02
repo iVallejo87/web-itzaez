@@ -138,7 +138,7 @@ task('compileVideo', () => {
 
 task('img-minify', () => {
   return src(paths.images.files)
-  .pipe(gulpif(PRODUCTION, imagemin([imagemin.mozjpeg({quality: 75, progressive: true})],{verbose: true})))
+  // .pipe(gulpif(PRODUCTION, imagemin([imagemin.mozjpeg({quality: 75, progressive: true})],{verbose: true})))
   // .pipe(imagemin([
   //   imagemin.mozjpeg({quality: 75, progressive: true})
   // ], {
