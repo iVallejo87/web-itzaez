@@ -1,0 +1,64 @@
+@use '../utilities/' as *;
+
+.main-footer {
+  padding-top: rem(48px);
+}
+
+.logo-itzaez-footer {
+  img {
+    display: block;
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+.footer-down {
+  padding: rem(48px) 0;
+  &__logos {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: rem(8px);
+    border-bottom: 1px solid $blue-itzaez;
+    a {
+      display: block;
+      width: 100px;
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &__links {
+    padding-top: rem(16px);
+    
+    .text-footer {
+      display: block;
+      padding: rem(8px);
+      // border-right: 1px solid $blue-itzaez;
+      text-align: center;
+    }
+    .link-footer {
+      display: block;
+      padding: rem(8px);
+      text-align: center;
+      color: $blue-itzaez;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+  @include media-query(md) {
+    &__links {
+      display: flex;
+      justify-content: center;
+      .text-footer {
+        border-right: 1px solid $blue-itzaez;
+      }
+      .link-footer {
+        border-right: 1px solid $blue-itzaez;
+      }
+    }
+  }
+}

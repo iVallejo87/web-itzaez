@@ -2,6 +2,11 @@
 
 .cards-content {
   margin-top: rem(48px);
+  @include media-query(md) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }
 
 .card-valores {
@@ -11,7 +16,7 @@
   margin: 0 auto;
   margin-bottom: rem(48px);
   &:last-child {
-    margin-bottom: 0;
+    // margin-bottom: 0;
   }
   &__icon {
     img {
@@ -33,10 +38,31 @@
     color: $text-color;
     text-align: center;
   }
+  @include media-query(md) {
+    width: calc((100% - 80px) / 2);
+    margin: 0;
+    margin-bottom: rem(48px);
+    &:last-child {
+      width: 90%;
+    }
+  }
+  @include media-query(lg) {
+    width: calc((100% - 80px) / 3);
+    &:last-child {
+      width: calc((100% - 80px) / 3);
+    }
+  }
+  @include media-query(xl) {
+    // max-width: 320px;
+  }
 }
 
 .card-ahorro {
-  @extend .card-valores;
+  width: 90%;
+  padding: rem(24px) rem(16px);
+  box-shadow: 0 0 24px rgba(#2E3191, .1);
+  margin: 0 auto;
+  margin-bottom: rem(48px);
   &__icon {
     img {
       display: block;
@@ -57,5 +83,21 @@
     color: $text-color;
     text-align: center;
     margin-bottom: rem(16px);
+  }
+  @include media-query(md) {
+    &:last-child {
+
+    }
+  }
+  @include media-query(lg) {
+    width: calc((100% - 80px) / 3);
+    &:last-child {
+      width: 60%;
+    }
+  }
+  @include media-query(xl) {
+    &:last-child {
+
+    }
   }
 }

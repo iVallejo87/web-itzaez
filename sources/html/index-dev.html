@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
+  <div id="inicio"></div>
   <!-- /////***** TOP CONTACT HEADER *****///// -->
   <div class="contact-header">
     <div class="contact-header__container">
@@ -39,32 +40,32 @@
     <!-- MAIN HEADER -->
     <header class="hero-slide__header main-header">
       <div class="main-header--container">
-        <div class="main-header--logo">
+        <div class="main-header--logo logo-header">
           <a href="#"><img src="img/logo-itzaez-horz.svg" class="logo-menu-itzaez" alt="Caja Itzaez Logo"></a>
         </div>
-        <div class="main-header--menu-bars icon-bars">
+        <div class="main-header--menu-bars icon-bars btn-menu">
           <span class="icon-bars--bar"></span>
           <span class="icon-bars--bar"></span>
           <span class="icon-bars--bar"></span>
         </div>
         <div class="main-header--menu">
           <nav class="menu">
-            <ul class="menu--list-menu">
-              <li class="menu--item-menu"><a href="" class="menu--link-menu">Inicio</a></li>
-              <li class="menu--item-menu"><a href="" class="menu--link-menu">Sobre nosotros</a></li>
-              <li class="menu--item-menu"><a href="" class="menu--link-menu">Conviértete en socio</a></li>
-              <li class="menu--item-menu"><a href="" class="menu--link-menu">Ahorro</a></li>
-              <li class="menu--item-menu"><a href="" class="menu--link-menu">Crédito</a></li>
-              <li class="menu--item-menu"><a href="" class="menu--link-menu">Servicios</a></li>
-              <li class="menu--item-menu"><a href="" class="menu--link-menu">Sucursales</a></li>
-              <li class="menu--item-menu"><a href="" class="menu-link-menu">Contáctanos</a></li>
+            <ul class="menu__list-menu list-menu">
+              <li class="menu__item-menu"><a href="#inicio" class="menu__link-menu link-btn">Inicio</a></li>
+              <li class="menu__item-menu"><a href="#about" class="menu__link-menu link-btn">Sobre nosotros</a></li>
+              <li class="menu__item-menu"><a href="#partner" class="menu__link-menu link-btn">Conviértete en socio</a></li>
+              <li class="menu__item-menu"><a href="#saving" class="menu__link-menu link-btn">Ahorro</a></li>
+              <li class="menu__item-menu"><a href="#credit" class="menu__link-menu link-btn">Crédito</a></li>
+              <li class="menu__item-menu"><a href="#services" class="menu__link-menu link-btn">Servicios</a></li>
+              <li class="menu__item-menu"><a href="#suc" class="menu__link-menu link-btn">Sucursales</a></li>
+              <li class="menu__item-menu"><a href="#contact" class="menu__link-menu link-btn">Contáctanos</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
     <div class="hero-slide__slide">
-      <div id="hero-slider" class="slider owl-carousel">
+      <div id="hero-slider" class="main-slider slider owl-carousel">
         <div class="slider__item">
           <div class="slider__text text-slider">
             <h1 class="text-slider__title">Somos una Sociedad Cooperativa autorizada por la Comisión Nacional Bancaria y de Valores (CNBV)</h1>
@@ -74,7 +75,7 @@
             <source media="(min-width:1200px)" srcset="img/img-slide-xl_01.jpg">
             <source media="(min-width:992px)" srcset="img/img-slide-lg_01.jpg">
             <source media="(min-width:768px)" srcset="img/img-slide-md_01.jpg">
-            <img src="img/img-slide-sm_01.jpg" alt="">
+            <img src="img/img-slide-sm_01.jpg" class="main-slider__img" alt="">
           </picture> 
         </div>
         <div class="slider__item">
@@ -85,7 +86,7 @@
             <source media="(min-width:1200px)" srcset="img/img-slide-xl_02.jpg">
             <source media="(min-width:992px)" srcset="img/img-slide-lg_02.jpg">
             <source media="(min-width:768px)" srcset="img/img-slide-md_02.jpg">
-            <img src="img/img-slide-sm_02.jpg" alt="">
+            <img src="img/img-slide-sm_02.jpg" class="main-slider__img" alt="">
           </picture> 
         </div>
         <div class="slider__item">
@@ -96,7 +97,7 @@
             <source media="(min-width:1200px)" srcset="img/img-slide-xl_03.jpg">
             <source media="(min-width:992px)" srcset="img/img-slide-lg_03.jpg">
             <source media="(min-width:768px)" srcset="img/img-slide-md_03.jpg">
-            <img src="img/img-slide-sm_03.jpg" alt="">
+            <img src="img/img-slide-sm_03.jpg" class="main-slider__img" alt="">
           </picture> 
         </div>
         <div class="slider__item">
@@ -107,7 +108,7 @@
             <source media="(min-width:1200px)" srcset="img/img-slide-xl_04.jpg">
             <source media="(min-width:992px)" srcset="img/img-slide-lg_04.jpg">
             <source media="(min-width:768px)" srcset="img/img-slide-md_04.jpg">
-            <img src="img/img-slide-sm_04.jpg" alt="">
+            <img src="img/img-slide-sm_04.jpg" class="main-slider__img" alt="">
           </picture> 
         </div>
       </div>
@@ -125,7 +126,7 @@
     </div>
   </section>
   <!-- /////***** ABOUT SECTION *****///// -->
-  <section class="about-section section">
+  <section id="about" class="about-section section">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -207,7 +208,7 @@
     </div>
   </section>
   <!-- /////***** PARTNER SECTION *****///// -->
-  <section class="partner-section section">
+  <section id="partner" class="partner-section section">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -219,22 +220,22 @@
         <div class="col">
         <div id="partner-slider" class="slider-partner slider owl-carousel">
           <div class="slider__item">
-              <p class="slider-partner__title">Requisitos:</p>
-              <p class="slider-partner__text">Copia de: Acta de nacimiento, credencial de elector, comprobante de domicilio y RFC.</p>
-              <p class="slider-partner__text">2 Fotografías tamaño infantil, aportación de parte social y $ 116 por costo de inscripción.</p>
-            </div>
-            <div class="slider__item list-items">
-              <div class="wrap-text">
-                <p class="slider-partner__title">Derechos:</p>
-                <ul class="slider-partner__list">
-                  <li>Participar en promociones.</li>
-                  <li>Solicitar crédito (aplica restricciones).</li>
-                  <li>Contratar los servicios.</li>
-                  <li>Retiros de ahorros de acuerdo a días preestablecidos.</li>
-                  <li>Ser informado de la situación financiera de la sociedad.</li>
-                  <li>Participar en convocatorias para cargos directivos.</li>
-                  <li>Participar en las asambleas.</li>
-                </ul>
+            <p class="slider-partner__title">Requisitos:</p>
+            <p class="slider-partner__text">Copia de: Acta de nacimiento, credencial de elector, comprobante de domicilio y RFC.</p>
+            <p class="slider-partner__text">2 Fotografías tamaño infantil, aportación de parte social y $ 116 por costo de inscripción.</p>
+          </div>
+          <div class="slider__item list-items">
+            <div class="wrap-text">
+              <p class="slider-partner__title">Derechos:</p>
+              <ul class="slider-partner__list">
+                <li>Participar en promociones.</li>
+                <li>Solicitar crédito (aplica restricciones).</li>
+                <li>Contratar los servicios.</li>
+                <li>Retiros de ahorros de acuerdo a días preestablecidos.</li>
+                <li>Ser informado de la situación financiera de la sociedad.</li>
+                <li>Participar en convocatorias para cargos directivos.</li>
+                <li>Participar en las asambleas.</li>
+              </ul>
             </div>
             <div class="wrap-text">
               <p class="slider-partner__title">Obligaciones:</p>
@@ -245,7 +246,7 @@
                 <li>Guardar el orden dentro de las instalaciones.</li>
                 <li>Cumplir con las disposiciones.</li>
               </ul>
-          </div>
+            </div>
           </div>
         </div>
         </div>
@@ -253,7 +254,7 @@
     </div>
   </section>
   <!-- /////***** SAVING SECTION *****///// -->
-  <section class="saving-section section">
+  <section id="saving" class="saving-section section">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -313,7 +314,7 @@
               <p class="card-ahorro__text">¡Ábrele su cuenta! El tutor o ahorrador menor pueden ir depositando para fomentar el buen hábito del ahorro y por supuesto, un capital.</p>
             </div>
              <!-- card ahorro -->
-             <div class="ahorro__card card-ahorro">
+             <div class="ahorro__card card-ahorro card-ahorro--last">
               <div class="card-ahorro__icon">
                 <img src="img/plazo-icon.svg" class="" alt="Misión icono">
               </div>
@@ -327,7 +328,7 @@
     </div>
   </section>
   <!-- /////***** CREDIT SECTION *****///// -->
-  <section class="credit-section section">
+  <section id="credit" class="credit-section section">
     <div class="credit-section__left credit-left">
       <div class="credit-left__info">
         <h2 class="section__title title-section title-section--blue">Solicita tu crédito</h2>
@@ -377,7 +378,7 @@
     </div>
   </section>
   <!-- /////***** SERVICES SECTION *****///// -->
-  <section class="services-section section">
+  <section id="services" class="services-section section">
     <div class="services-section__left services-left">
       <img src="img/services-img.jpg" class="services-left__img" alt="Servicios financieros">
     </div>
@@ -386,165 +387,274 @@
         <h2 class="section__title title-section title-section--white">Servicios</h2>
         <p class="section__text text-section text-section--white">Caja Itzaez trabaja para ti, y te ofrece servicios plus, mediante convenios con otras empresas para que tú como socio los obtengas a precios accesibles y disfrutes sus beneficios.</p>
         <p class="section__text text-section text-section--white"><strong>Previsión Funeraria:</strong> es un servicio funerario que se otorga mediante un convenio con funerarias locales. Requisitos para contratarlo: ser socio (también lo puedes contratar para tu cónyuge e hijos).</p>
-        <p class="section__text text-section text-section--white">Seguro de vida: Por ti, y por los tuyos, hemos hecho convenios con Aseguradoras, para que nuestros socios menores a 70 años puedan contratar un seguro de vida mediante una cuota mensual anticipada.</p>
+        <p class="section__text text-section text-section--white"><strong>Seguro de vida:</strong> Por ti, y por los tuyos, hemos hecho convenios con Aseguradoras, para que nuestros socios menores a 70 años puedan contratar un seguro de vida mediante una cuota mensual anticipada.</p>
       </div>
     </div>
   </section>
-   <!-- /////***** TETIMONIO SECTION *****///// -->
-   <section class="testimonio-section section">
-     <div class="video-testimonio">
-      <video id="video-player" class="video-testimonio__video" poster="img/poster-video.png" controls preload muted>
-        <source src="video/testimonio.mp4" type="video/mp4">
-        This browser doesn't support video tag.
-      </video>
-     </div>
-     <p class="text-section text-section--white text-section--center text-section--bold">Conoce el testimonio de uno de nuestros clientes</p>
-   </section>
-   <!-- /////***** SUCURSALES SECTION *****///// -->
-   <section class="sucursales-section section">
+  <!-- /////***** TETIMONIO SECTION *****///// -->
+  <section class="testimonio-section section">
+    <div class="video-testimonio">
+      <div class="video-testimonio__wrap-video">
+        <video id="video-player" class="video-testimonio__video" poster="img/poster-video.png" controls preload muted>
+          <source src="video/testimonio.mp4" type="video/mp4">
+          This browser doesn't support video tag.
+        </video>
+      </div>
+    </div>
+    <p class="text-section text-section--white text-section--center text-section--bold">Conoce el testimonio de uno de nuestros clientes</p>
+  </section>
+  <!-- /////***** SUCURSALES SECTION *****///// -->
+  <section id="suc" class="sucursales-section section">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="section__title title-section title-section--blue">Sucursales</h2>
+        <p class="section__text text-section text-section--gray text-section--center">Tenemos 13 sucursales para la atención personalizada de nuestros socios.</p>
+        <p class="section__text text-section text-section--gray text-section--bold text-section--center">Te invitamos a visitarnos, será un placer atenderte.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="sucursales">
+          <!-- SUCURSALES ACCORDEON -->
+          <div class="sucursales__accordeon accordeon">
+            <ul class="accordeon__ul ul-accordeon">
+              <!-- ITEM ACCORDEON -->
+              <li class="accordeon__item">
+                <a href="" class="accordeon__link">Sucursal Doce de Diciembre<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
+                <div class="accordeon__container">
+                  <div class="sucursales-info">
+                    <div class="sucursales-info__item address"><p>Calle 86 #465-A X 45 y 47 Av. Itzaes Col. Inalambrica C.P. 97069</p></div>
+                    <div class="sucursales-info__item phone"><a href="#">999 469 4908</a></div>
+                    <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
+                  </div>
+                </div>
+              </li>
+              <!-- ITEM ACCORDEON -->
+              <li class="accordeon__item">
+                <a href="" class="accordeon__link">Sucursal Nuestra Señora de Yucatán<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
+                <div class="accordeon__container">
+                  <div class="sucursales-info">
+                    <div class="sucursales-info__item address"><p>Calle 15 #10-A X 20 y 22 Col. Yucatán C.P. 97050</p></div>
+                    <div class="sucursales-info__item phone"><a href="#">999 920 0246</a></div>
+                    <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
+                  </div>
+                </div>
+              </li>
+              <!-- ITEM ACCORDEON -->
+              <li class="accordeon__item">
+                <a href="" class="accordeon__link">Sucursal Nuestra Señora de las Mercedes (Tanlum)<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
+                <div class="accordeon__container">
+                  <div class="sucursales-info">
+                    <div class="sucursales-info__item address"><p>Calle 43 #356 X 20 y 24 Col. Pedregales de Tanlum C.P. 97210</p></div>
+                    <div class="sucursales-info__item phone"><a href="#">999 920 2231</a></div>
+                    <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
+                  </div>
+                </div>
+              </li>
+              <!-- ITEM ACCORDEON -->
+              <li class="accordeon__item">
+                <a href="" class="accordeon__link">Sucursal Chenkú<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
+                <div class="accordeon__container">
+                  <div class="sucursales-info">
+                    <div class="sucursales-info__item address"><p>Calle 21 diag. #271 X 33 y 35 fracc. Residencial del Norte Chenku C.P.97219</p></div>
+                    <div class="sucursales-info__item phone"><a href="#">999 987 3193</a></div>
+                    <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
+                  </div>
+                </div>
+              </li>
+              <!-- ITEM ACCORDEON -->
+              <li class="accordeon__item">
+                <a href="" class="accordeon__link">Sucursal Chuburná<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
+                <div class="accordeon__container">
+                  <div class="sucursales-info">
+                    <div class="sucursales-info__item address"><p>Calle 20 #101 X 21 y 23 Col. Chuburná C.P. 97205</p></div>
+                    <div class="sucursales-info__item phone"><a href="#">999 981 2980</a></div>
+                    <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
+                  </div>
+                </div>
+              </li>
+              <!-- ITEM ACCORDEON -->
+              <li class="accordeon__item">
+                <a href="" class="accordeon__link">Sucursal Pensiones<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
+                <div class="accordeon__container">
+                  <div class="sucursales-info">
+                    <div class="sucursales-info__item address"><p>Calle 7 #370 X 52 y 54 fracc. Residencial Pensiones C.P. 97217</p></div>
+                    <div class="sucursales-info__item phone"><a href="#">999 987 3375</a></div>
+                    <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
+                  </div>
+                </div>
+              </li>
+              <!-- ITEM ACCORDEON -->
+              <li class="accordeon__item">
+                <a href="" class="accordeon__link">Sucursal Emiliano Zapata Sur<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
+                <div class="accordeon__container">
+                  <div class="sucursales-info">
+                    <div class="sucursales-info__item address"><p>Calle 90 #185 X 141 y 143 Col. Emiliano Zapata Sur C.P. 97297</p></div>
+                    <div class="sucursales-info__item phone"><a href="#">999 940 9711</a></div>
+                    <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
+                  </div>
+                </div>
+              </li>
+              <!-- ITEM ACCORDEON -->
+              <li class="accordeon__item">
+                <a href="" class="accordeon__link">Sucursal Francisco Montejo I y II<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
+                <div class="accordeon__container">
+                  <div class="sucursales-info">
+                    <div class="sucursales-info__item address"><p>Calle 43 #176 X 40 Local 26 Plaza Altana Col. Pinzón C.P. 97205</p></div>
+                    <div class="sucursales-info__item phone"><a href="#">999 919 5566</a></div>
+                    <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
+                  </div>
+                </div>
+              </li>
+              <!-- ITEM ACCORDEON -->
+              <li class="accordeon__item">
+                <a href="" class="accordeon__link">Sucursal García Ginerés<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
+                <div class="accordeon__container">
+                  <div class="sucursales-info">
+                    <div class="sucursales-info__item address"><p>Calle 18 #200-A X 21 y 23 Col. García Ginerés C.P. 97070</p></div>
+                    <div class="sucursales-info__item phone"><a href="#">999 920 7763</a><a href="#">999 920 7764</a><a href="#">999 925 2197</a></div>
+                    <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
+                  </div>
+                </div>
+              </li>
+              <!-- ITEM ACCORDEON -->
+              <li class="accordeon__item">
+                <a href="" class="accordeon__link">Sucursal Hopelchén<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
+                <div class="accordeon__container">
+                  <div class="sucursales-info">
+                    <div class="sucursales-info__item address"><p>Calle 18 s/n X 13 y 15 Campo de Aviación Hopelchén, Camp. C.P. 24600</p></div>
+                    <div class="sucursales-info__item phone"><a href="#">996 822 0502</a></div>
+                    <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
+                  </div>
+                </div>
+              </li>
+              <!-- ITEM ACCORDEON -->
+              <li class="accordeon__item">
+                <a href="" class="accordeon__link">Sucursal Hecelchakán y Pomuch<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
+                <div class="accordeon__container">
+                  <div class="sucursales-info">
+                    <div class="sucursales-info__item address"><p>Calle 20 #40-A X 13 y 15 La Conquista Hecelchakán, Camp. C.P. 24800</p></div>
+                    <div class="sucursales-info__item phone"><a href="#">996 827 0403</a></div>
+                    <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
+                  </div>
+                </div>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- /////***** CONTACT SECTION *****///// -->
+  <section id="contact" class="contact-section section">
     <div class="container">
       <div class="row">
         <div class="col">
-          <h2 class="section__title title-section title-section--blue">Sucursales</h2>
-          <p class="section__text text-section text-section--gray">Tenemos 13 sucursales para la atención personalizada de nuestros socios.</p>
-          <p class="section__text text-section text-section--gray text-section--bold">Te invitamos a visitarnos, será un placer atenderte.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="sucursales">
-            <!-- SUCURSALES ACCORDEON -->
-            <div class="sucursales__accordeon accordeon">
-              <ul class="accordeon__ul ul-accordeon">
-                <!-- ITEM ACCORDEON -->
-                <li class="accordeon__item">
-                  <a href="" class="accordeon__link">Sucursal Doce de Diciembre<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
-                  <div class="accordeon__container">
-                    <div class="sucursales-info">
-                      <div class="sucursales-info__item address"><p>Calle 86 #465-A X 45 y 47 Av. Itzaes Col. Inalambrica C.P. 97069</p></div>
-                      <div class="sucursales-info__item phone"><a href="#">999 469 4908</a></div>
-                      <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
+          <h2 class="section__title title-section title-section--gray">Solicita hablar con un asesor</h2>
+          <p class="section__text text-section text-section--gray text-section--center">Déjanos tus datos y nos pondremos en contacto lo más pronto posible.</p>
+          <div class="contact">
+            <div class="contact__form contact-form">
+              <form action="" method="" id="" class="contact-form__form">
+                <div class="contact-form__group">
+                  <div class="contact-form__wrap-input">
+                    <label for="name" class="contact-form__label">Nombre completo</label>
+                    <input type="text" name="name" id="" class="contact-form__input" placeholder="Juan Pérez Ramírez">
+                  </div>
+                </div>
+                <div class="contact-form__group contact-form__group--double">
+                  <div class="contact-form__wrap-input contact-form__wrap-input--double">
+                    <label for="asunto" class="contact-form__label">Asunto</label>
+                    <div class="wrap-select">
+                      <select name="asunto" id="asunto" class="wrap-select__select contact-form__select">
+                        <option value="">Asunto</option>
+                        <option value="asunto-1">Asunto 1</option>
+                        <option value="asunto-2">Asunto 2</option>
+                        <option value="asunto-3">Asunto 3</option>
+                      </select>
+                      <span class="focus"></span>
                     </div>
                   </div>
-                </li>
-                <!-- ITEM ACCORDEON -->
-                <li class="accordeon__item">
-                  <a href="" class="accordeon__link">Sucursal Nuestra Señora de Yucatán<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
-                  <div class="accordeon__container">
-                    <div class="sucursales-info">
-                      <div class="sucursales-info__item address"><p>Calle 15 #10-A X 20 y 22 Col. Yucatán C.P. 97050</p></div>
-                      <div class="sucursales-info__item phone"><a href="#">999 920 0246</a></div>
-                      <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
+                  <div class="contact-form__wrap-input contact-form__wrap-input--double">
+                    <label for="horario" class="contact-form__label">Horario de contacto</label>
+                    <div class="wrap-select">
+                      <select name="horario" id="horario" class="wrap-select__select contact-form__select">
+                        <option value="">Mañana, tarde o noche</option>
+                        <option value="manana">Mañana</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noche">Noche</option>
+                      </select>
+                      <span class="focus"></span>
                     </div>
                   </div>
-                </li>
-                <!-- ITEM ACCORDEON -->
-                <li class="accordeon__item">
-                  <a href="" class="accordeon__link">Sucursal Nuestra Señora de las Mercedes (Tanlum)<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
-                  <div class="accordeon__container">
-                    <div class="sucursales-info">
-                      <div class="sucursales-info__item address"><p>Calle 43 #356 X 20 y 24 Col. Pedregales de Tanlum C.P. 97210</p></div>
-                      <div class="sucursales-info__item phone"><a href="#">999 920 2231</a></div>
-                      <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
-                    </div>
+                </div>
+                <div class="contact-form__group contact-form__group--double">
+                  <div class="contact-form__wrap-input contact-form__wrap-input--double">
+                    <label for="telefono" class="contact-form__label">Teléfono</label>
+                    <input type="text" name="telefono" id="" class="contact-form__input" placeholder="999 123 456">
                   </div>
-                </li>
-                <!-- ITEM ACCORDEON -->
-                <li class="accordeon__item">
-                  <a href="" class="accordeon__link">Sucursal Chenkú<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
-                  <div class="accordeon__container">
-                    <div class="sucursales-info">
-                      <div class="sucursales-info__item address"><p>Calle 21 diag. #271 X 33 y 35 fracc. Residencial del Norte Chenku C.P.97219</p></div>
-                      <div class="sucursales-info__item phone"><a href="#">999 987 3193</a></div>
-                      <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
-                    </div>
+                  <div class="contact-form__wrap-input contact-form__wrap-input--double">
+                    <label for="email" class="contact-form__label">Correo electrónico</label>
+                    <input type="text" name="email" id="" class="contact-form__input" placeholder="correo@mail.com">
                   </div>
-                </li>
-                <!-- ITEM ACCORDEON -->
-                <li class="accordeon__item">
-                  <a href="" class="accordeon__link">Sucursal Chuburná<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
-                  <div class="accordeon__container">
-                    <div class="sucursales-info">
-                      <div class="sucursales-info__item address"><p>Calle 20 #101 X 21 y 23 Col. Chuburná C.P. 97205</p></div>
-                      <div class="sucursales-info__item phone"><a href="#">999 981 2980</a></div>
-                      <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
-                    </div>
+                </div>
+                <div class="contact-form__group">
+                  <div class="contact-form__wrap-textarea">
+                    <label for="comentarios" class="contact-form__label">Comentarios</label>
+                    <textarea name="comentarios" id="" class="contact-form__textarea"></textarea>
                   </div>
-                </li>
-                <!-- ITEM ACCORDEON -->
-                <li class="accordeon__item">
-                  <a href="" class="accordeon__link">Sucursal Pensiones<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
-                  <div class="accordeon__container">
-                    <div class="sucursales-info">
-                      <div class="sucursales-info__item address"><p>Calle 7 #370 X 52 y 54 fracc. Residencial Pensiones C.P. 97217</p></div>
-                      <div class="sucursales-info__item phone"><a href="#">999 987 3375</a></div>
-                      <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
-                    </div>
+                </div>
+                <div class="contact-form__group contact-form__group--button">
+                  <div class="contact-form__wrap-button">
+                    <button type="submit" id="button-form" class="contact-form__button submit-button">Enviar información</button>
                   </div>
-                </li>
-                <!-- ITEM ACCORDEON -->
-                <li class="accordeon__item">
-                  <a href="" class="accordeon__link">Sucursal Emiliano Zapata Sur<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
-                  <div class="accordeon__container">
-                    <div class="sucursales-info">
-                      <div class="sucursales-info__item address"><p>Calle 90 #185 X 141 y 143 Col. Emiliano Zapata Sur C.P. 97297</p></div>
-                      <div class="sucursales-info__item phone"><a href="#">999 940 9711</a></div>
-                      <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
-                    </div>
-                  </div>
-                </li>
-                <!-- ITEM ACCORDEON -->
-                <li class="accordeon__item">
-                  <a href="" class="accordeon__link">Sucursal Francisco Montejo I y II<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
-                  <div class="accordeon__container">
-                    <div class="sucursales-info">
-                      <div class="sucursales-info__item address"><p>Calle 43 #176 X 40 Local 26 Plaza Altana Col. Pinzón C.P. 97205</p></div>
-                      <div class="sucursales-info__item phone"><a href="#">999 919 5566</a></div>
-                      <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
-                    </div>
-                  </div>
-                </li>
-                <!-- ITEM ACCORDEON -->
-                <li class="accordeon__item">
-                  <a href="" class="accordeon__link">Sucursal García Ginerés<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
-                  <div class="accordeon__container">
-                    <div class="sucursales-info">
-                      <div class="sucursales-info__item address"><p>Calle 18 #200-A X 21 y 23 Col. García Ginerés C.P. 97070</p></div>
-                      <div class="sucursales-info__item phone"><a href="#">999 920 7763</a><a href="#">999 920 7764</a><a href="#">999 925 2197</a></div>
-                      <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
-                    </div>
-                  </div>
-                </li>
-                <!-- ITEM ACCORDEON -->
-                <li class="accordeon__item">
-                  <a href="" class="accordeon__link">Sucursal Hopelchén<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
-                  <div class="accordeon__container">
-                    <div class="sucursales-info">
-                      <div class="sucursales-info__item address"><p>Calle 18 s/n X 13 y 15 Campo de Aviación Hopelchén, Camp. C.P. 24600</p></div>
-                      <div class="sucursales-info__item phone"><a href="#">996 822 0502</a></div>
-                      <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
-                    </div>
-                  </div>
-                </li>
-                <!-- ITEM ACCORDEON -->
-                <li class="accordeon__item">
-                  <a href="" class="accordeon__link">Sucursal Hecelchakán y Pomuch<span class="fa-solid fa-chevron-down" aria-hidden="true"></span></a>
-                  <div class="accordeon__container">
-                    <div class="sucursales-info">
-                      <div class="sucursales-info__item address"><p>Calle 20 #40-A X 13 y 15 La Conquista Hecelchakán, Camp. C.P. 24800</p></div>
-                      <div class="sucursales-info__item phone"><a href="#">996 827 0403</a></div>
-                      <div class="sucursales-info__item google"><a href="#">Ver en Google maps</a></div>
-                    </div>
-                  </div>
-                </li>
-                
-              </ul>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-     </div>
-   </section>
+    </div>
+  </section>
+  <!-- /////***** FOOTER *****///// -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="logo-itzaez-footer">
+            <img src="img/logo-itzaez.svg" alt="Logo Caja Itzaez">
+          </div>
+          <div class="footer-down">
+            <div class="footer-down__logos">
+              <a href="#">
+                <img src="img/cnbv-logo-1.png" alt="">
+              </a>
+              <a href="#">
+                <img src="img/condusef-logo.png" alt="">
+              </a>
+              <a href="#">
+                <img src="img/buro-logo.png" alt="">
+              </a>
+              <a href="#">
+                <img src="img/cnbv-logo-aprob.png" alt="">
+              </a>
+            </div>
+            <div class="footer-down__links">
+              <p class="text-footer">Todos los derechos reservados &copy; 2022</p>
+              <a href="#" class="link-footer">Términos y condiciones</a>
+              <a href="#" class="link-footer">Aviso de privacidad</a>
+              <a href="#" class="link-footer">UNE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="whats-button">
+    <a href="#" class="whats-button__link"></a>
+  </div>
   <!-- /////***** SCRIPTS JS *****///// -->
   <script src="js/resources.min.js"></script>
   <script src="js/main.min.js"></script>

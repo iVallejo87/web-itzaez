@@ -39,6 +39,7 @@
     align-items: center;
     color: #ffffff;
     margin-right: rem(16px);
+    font-size: rem(16px);
     &:last-child {
       margin-right: 0;
     }
@@ -72,6 +73,7 @@
   }
   @include media-query(md) {
     &__item {
+      font-size: rem(14px);
       &.contact-info {
         display: flex;
       }
@@ -80,7 +82,7 @@
 
   @include media-query(lg) {
     &__icon {
-      font-size: rem(16px);
+      font-size: rem(18px);
     }
   }
 

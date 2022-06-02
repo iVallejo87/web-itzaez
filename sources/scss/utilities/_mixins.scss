@@ -27,4 +27,9 @@ $breakpoints: (
   font-size: rem(16px);
   line-height: 145%;
   letter-spacing: em(1px);
+  @include media-query(md) {
+    width: 90%;
+    margin: 0 auto;
+    // margin-bottom: rem(16px);
+  }
 }

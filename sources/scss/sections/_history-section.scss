@@ -1,9 +1,9 @@
 @use '../utilities/' as *;
 
 .history-section {
-  padding: rem(56px) 0 rem(56px) 0;
+  padding: rem(56px) 0;
   background-color: $blue-itzaez;
-  overflow-x: hidden;
+  overflow: hidden;
   .ornament-left {
     width: 200px;
     height: 150px;

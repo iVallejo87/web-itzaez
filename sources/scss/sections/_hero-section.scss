@@ -20,14 +20,14 @@
     // z-index: 1;
   }
   @include media-query(md) {
-
+    min-height: 400px;
   }
 
   @include media-query(lg) {
-    background-image: url("../img/img-slide-xl.jpg")
+    min-height: 500px;
   }
 
   @include media-query(xl) {
-    
+    min-height: 600px;
   }
 }

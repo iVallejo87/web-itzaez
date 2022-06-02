@@ -7,7 +7,7 @@ btnPrevent.on('click', function(e) {
 // SLIDERS
 
 let topSlide = $("#hero-slider").owlCarousel({
-  autoplay: true,
+  autoplay: false,
   loop: true,
   nav: false,
   dots: true,
@@ -18,7 +18,7 @@ let topSlide = $("#hero-slider").owlCarousel({
 let historySlide = $("#history-slider").owlCarousel({
   autoplay: false,
   loop: false,
-  nav: false,
+  nav: true,
   dots: false,
   navText: [" ", " "],
   items:1
@@ -87,3 +87,70 @@ let accordeonSuc = $(".ul-accordeon");
   iconOthers.attr('class', 'fa-solid fa-chevron-down');
   return false;
  })
+
+//  HEADER FIXED
+
+let webWindow = $(window);
+let header = $(".main-header");
+let logoHeader = $(".logo-header");
+let btnMenu = $(".btn-menu");
+let menu = $(".menu");
+
+if(webWindow.width() >= 1024){
+  webWindow.on('scroll', function(){
+    if(webWindow.scrollTop() > 200) {
+      header.addClass('fixed');
+      logoHeader.css("width", "200px")
+    }else {
+      header.removeClass('fixed');
+      logoHeader.css("width", "300px")
+    }
+  });
+}else {
+  webWindow.on('scroll', function(){
+    if(webWindow.scrollTop() > 200) {
+      header.addClass('fixed');
+    }else {
+      header.removeClass('fixed');
+    }
+  });
+}
+
+//  MENU RESPONSIVE
+
+btnMenu.on('click', function(){
+  if(!menu.hasClass('open')){
+    $(this).addClass('btn-open')
+    menu.addClass('open').fadeIn(200);
+    header.addClass('open')
+  }else {
+    $(this).removeClass('btn-open')
+    menu.fadeOut(200).removeClass('open')
+    header.removeClass('open')
+  }
+})
+
+// LINKS SCROLL
+
+let listMenu = $(".list-menu")
+let linkBTn = $(".link-btn");
+// let linkBTnLogo = $(".link-btn-logo");
+
+listMenu.on('click', '.link-btn', function(e){
+  if (this.hash !== "") {
+    e.preventDefault();
+    let hash = this.hash;
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top - 70
+    }, 700);
+  }
+})
+
+// linkBTnLogo.on('click', function(e){
+//   e.preventDefault();
+//   let hashLogo = this.hash;
+//   $('html, body').animate({
+//     scrollTop: $(hashLogo).offset().top
+//   }, 700);
+// })
+

@@ -7,9 +7,22 @@
     height: 320px;
     object-fit: cover;
   }
+  @include media-query(md) {
+    &__img {
+      height: 450px;
+    }
+  }
+  @include media-query(md) {
+    &__img {
+      height: 550px;
+    }
+  }
 }
 
 .services-right {
   padding: rem(48px) rem(16px) rem(64px) rem(16px);
   background-color: $red-itzaez;
+  @include media-query(lg) {
+    padding: rem(64px) rem(16px) rem(64px) rem(16px);
+  }
 }

@@ -5,15 +5,21 @@
   width: 100%;
   position: relative;
   z-index: 2;
+  transition: .1s all ease-in-out;
+  &.open {
+    background-color: #ffffff;
+  }
   &--container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 0 16px;
     margin: 0 auto;
   }
   &--logo {
     width: 220px;
+    transition: .3s all ease-in-out;
     a {
       display: block;
     }
@@ -27,15 +33,24 @@
   }
   &--menu {
     position: absolute;
+    top: 100%; left: 0;
+    width: 100%;
   }
-
+  &.fixed {
+    position: fixed;
+    width: 100%;
+    left: 0; top: 0;
+    background-color: #ffffff;
+    z-index: 1000;
+    box-shadow: 0 1px 5px rgba(#000000, .1);
+    padding: rem(8px) 0;
+  }
   @include media-query(md) {
     &--container {
       max-width: 720px;
     }
 
   }
-
   @include media-query(lg) {
     &--container {
       padding: 0;
@@ -51,26 +66,27 @@
       position: static;
     }
   }
-
   @include media-query(xl) {
+    &--menu {
+      position: static;
+      width: auto;
+    }
     &--container {
       max-width: 1200px;
     }
   }
-
   @include media-query(xxl) {
     &--container {
       max-width: 1320px;
     }
   }
-  
 }
 
 .icon-bars {
   width: 48px;
-  height: 45px;
+  height: 40px;
   flex-wrap: wrap;
-  align-items: space-between;
+  align-items: center;
   &--bar {
     display: block;
     width: 45px;
