@@ -7,7 +7,7 @@ btnPrevent.on('click', function(e) {
 // SLIDERS
 
 let topSlide = $("#hero-slider").owlCarousel({
-  autoplay: false,
+  autoplay: true,
   loop: true,
   nav: false,
   dots: true,
