@@ -12,12 +12,13 @@ let topSlide = $("#hero-slider").owlCarousel({
   nav: false,
   dots: true,
   navText: [" ", " "],
-  items:1
+  items:1,
+  smartSpeed:750
 })
 
 let historySlide = $("#history-slider").owlCarousel({
   autoplay: false,
-  loop: false,
+  loop: true,
   nav: true,
   dots: false,
   navText: [" ", " "],
@@ -25,12 +26,13 @@ let historySlide = $("#history-slider").owlCarousel({
 })
 
 let partnerSlide = $("#partner-slider").owlCarousel({
-  autoplay: false,
-  loop: false,
+  autoplay: true,
+  loop: true,
   nav: false,
   dots: true,
   navText: [" ", " "],
-  items:1
+  items:1,
+  smartSpeed:750
 })
 
 let creditSlide = $("#credit-slider").owlCarousel({
@@ -43,7 +45,8 @@ let creditSlide = $("#credit-slider").owlCarousel({
   mouseDrag: false,
   smartSpeed: 800,
   navText: [" ", " "],
-  items:1
+  items:1,
+  smartSpeed:750
 })
 
 let imageSlide = $("#credit-image-slider").owlCarousel({
@@ -56,7 +59,8 @@ let imageSlide = $("#credit-image-slider").owlCarousel({
   mouseDrag: false,
   smartSpeed: 800,
   navText: [" ", " "],
-  items:1
+  items:1,
+  smartSpeed:750
 })
 
 // AUDIO PLAYER

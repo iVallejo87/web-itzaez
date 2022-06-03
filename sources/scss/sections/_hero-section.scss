@@ -1,7 +1,7 @@
 @use '../utilities/' as *;
 
 .hero-slide {
-  min-height: 500px;
+  min-height: 600px;
   position: relative;
   &__slide {
     position: absolute;
@@ -20,14 +20,14 @@
     // z-index: 1;
   }
   @include media-query(md) {
-    min-height: 400px;
+    min-height: 450px;
   }
 
   @include media-query(lg) {
-    min-height: 500px;
+    min-height: 550px;
   }
 
   @include media-query(xl) {
-    min-height: 600px;
+    min-height: 650px;
   }
 }

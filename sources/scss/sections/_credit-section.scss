@@ -12,7 +12,7 @@
   }
   @include media-query(lg) {
     &__left {
-      width: 55%;
+      width: 53%;
       position: relative;
       &::after {
         content: "";
@@ -34,7 +34,7 @@
       }
     }
     &__right {
-      width: 45%;
+      width: 47%;
     }
   }
 }

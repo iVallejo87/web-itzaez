@@ -31,7 +31,7 @@
   &__wrap-input {
     margin-bottom: rem(24px);
     &--double {
-      width: 48%;
+      width: 100%;
     }
   }
   &__input {
@@ -90,6 +90,11 @@
     outline: none;
   }
   @include media-query(md) {
+    &__wrap-input {
+      &--double {
+        width: 48%;
+      }
+    }
   }
 }
 

@@ -2,6 +2,7 @@
 
 .section {
   position: relative;
+  overflow-x: hidden;
   &__text {
     margin-bottom: rem(16px);
   }
