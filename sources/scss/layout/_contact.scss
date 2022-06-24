@@ -54,6 +54,9 @@
       border: 1px solid $orange-itzaez;
       border-radius: 0;
     }
+    @at-root &.error-input {
+      border: 2px solid $error;
+    }
   }
   &__textarea {
     display: block;
@@ -88,6 +91,46 @@
     letter-spacing: rem(1px);
     font-weight: 700;
     outline: none;
+    cursor: pointer;
+  }
+  &__error {
+    display: none;
+    padding: 10px 0;
+    p {
+      color: $error;
+      @at-root &::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        background: url('../img/error-icon.svg') no-repeat center;
+        background-size: cover;
+      }
+    }
+  }
+  &__send-message {
+    display: none;
+    margin-top: rem(16px);
+    .icon-message {
+      display: block;
+      width: 40px;
+      height: auto;
+      margin: 0 auto;
+    }
+    p {
+      padding: 20px 0;
+      text-align: center;
+      color: $ok;
+      font-size: rem(16px);
+      // letter-spacing: $sb-text;
+      // line-height: $lh-text;
+    }
+    &--error {
+      p {
+        color: $error;
+      }
+    }
   }
   @include media-query(md) {
     &__wrap-input {

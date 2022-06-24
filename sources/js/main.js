@@ -9,11 +9,14 @@ btnPrevent.on('click', function(e) {
 let topSlide = $("#hero-slider").owlCarousel({
   autoplay: true,
   loop: true,
-  nav: false,
+  nav: true,
   dots: true,
   navText: [" ", " "],
   items:1,
-  smartSpeed:750
+  smartSpeed:800,
+  autoplayHoverPause: true,
+  autoplayTimeout: 8000,
+  fluidSpeed: 10000
 })
 
 let historySlide = $("#history-slider").owlCarousel({
@@ -32,7 +35,10 @@ let partnerSlide = $("#partner-slider").owlCarousel({
   dots: true,
   navText: [" ", " "],
   items:1,
-  smartSpeed:750
+  smartSpeed:800,
+  autoplayHoverPause: true,
+  autoplayTimeout: 10000,
+  fluidSpeed: 10000
 })
 
 let creditSlide = $("#credit-slider").owlCarousel({
@@ -46,7 +52,9 @@ let creditSlide = $("#credit-slider").owlCarousel({
   smartSpeed: 800,
   navText: [" ", " "],
   items:1,
-  smartSpeed:750
+  smartSpeed:800,
+  autoplayTimeout: 10000,
+  fluidSpeed: 10000
 })
 
 let imageSlide = $("#credit-image-slider").owlCarousel({
@@ -60,7 +68,9 @@ let imageSlide = $("#credit-image-slider").owlCarousel({
   smartSpeed: 800,
   navText: [" ", " "],
   items:1,
-  smartSpeed:750
+  smartSpeed:800,
+  autoplayTimeout: 10000,
+  fluidSpeed: 10000
 })
 
 // AUDIO PLAYER
@@ -79,16 +89,23 @@ video.volume = 0.5;
 let accordeonSuc = $(".ul-accordeon");
 
  accordeonSuc.on('click', 'li', function(e){
-  e.preventDefault();
   let t = $(this);
   let btn = t.find('a').next();
   let icon = t.find('a').children();
   let iconOthers = t.siblings().find('a').children();
   let containerInfo = t.siblings().find('.accordeon__container');
+  let google = $('.accordeon__container').find('.google')
+  let phone = $('.accordeon__container').find('.phone')
   btn.slideToggle(300);
   containerInfo.slideUp(200);
   icon.toggleClass('fa-minus');
   iconOthers.attr('class', 'fa-solid fa-chevron-down');
+  google.on('click', function(e){
+    e.stopPropagation();
+  })
+  phone.on('click', function(e){
+    e.stopPropagation();
+  })
   return false;
  })
 

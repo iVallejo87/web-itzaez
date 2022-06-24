@@ -2,7 +2,7 @@
 
 .sucursales {
   width: 100%;
-  max-width: 550px;
+  max-width: 750px;
   margin: 0 auto;
   margin-top: rem(48px);
 }
@@ -114,6 +114,36 @@
       font-size: rem(18px);
       position: relative;
       padding-left: rem(24px);
+    }
+  }
+  @include media-query(md) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    &__item {
+      flex-basis: 30%;
+      @at-root &.address {
+        flex-basis: 50%;
+      }
+      @at-root &.phone {
+
+      }
+      @at-root &.google {
+
+      }
+    }
+    .google {
+      display: flex;
+      justify-content: center;
+      a {
+        padding-left: 0;
+      }
+    }
+    .phone {
+      display: flex;
+      justify-content: center;
+      a {
+      }
     }
   }
 }

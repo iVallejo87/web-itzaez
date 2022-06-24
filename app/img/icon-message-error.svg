@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Mesa_de_trabajo_3);
+      }
+
+      .cls-2 {
+        fill: #ff6e6e;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-Mesa_de_trabajo_3">
+      <rect width="60" height="60"/>
+    </clipPath>
+  </defs>
+  <g id="Mesa_de_trabajo_3" data-name="Mesa de trabajo – 3" class="cls-1">
+    <rect class="cls-3" width="60" height="60"/>
+    <circle id="Elipse_1" data-name="Elipse 1" class="cls-2" cx="28" cy="28" r="28" transform="translate(2 2)"/>
+    <path id="Icon_awesome-times" data-name="Icon awesome-times" class="cls-3" d="M19.313,19.629l7.962-7.962a2.5,2.5,0,0,0,0-3.539l-1.77-1.77a2.5,2.5,0,0,0-3.539,0L14,14.32,6.042,6.358a2.5,2.5,0,0,0-3.539,0L.733,8.127a2.5,2.5,0,0,0,0,3.539L8.7,19.629.733,27.591a2.5,2.5,0,0,0,0,3.539L2.5,32.9a2.5,2.5,0,0,0,3.539,0L14,24.938,21.966,32.9a2.5,2.5,0,0,0,3.539,0l1.77-1.77a2.5,2.5,0,0,0,0-3.539Z" transform="translate(16.371 10.746)"/>
+  </g>
+</svg>
