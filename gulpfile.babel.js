@@ -44,11 +44,16 @@ const paths = {
   js: {
     jsSources: `${source}js/src/*`,
     jsMain: `${source}js/main.js`,
+    jsValidate: `${source}js/validate-form.js`,
     dest: `${output}js`
   },
   images: {
     files: `${source}images/*`,
     dest: `${output}img`
+  },
+  favicon: {
+    files: `${source}favicon/*`,
+    dest: `${output}favicon`
   },
   fonts: {
     files: `${source}webfonts/*`,
@@ -57,11 +62,15 @@ const paths = {
   audio: {
     files: `${source}audio/*`,
     dest: `${output}audio`
-},
+  },
   video: {
     files: `${source}video/*`,
     dest: `${output}video`
-},
+  },
+  mail: {
+    files: `${source}mail-form/**`,
+    dest: `${output}mail`
+  },
   package: {
     src: 'app/**/*',
     dest: 'public/'
@@ -107,6 +116,15 @@ task('mainJs', () => {
 
 })
 
+task('validateForm', () => {
+  return(src(paths.js.jsValidate))
+  .pipe(babel())
+  .pipe(terser())
+  .pipe(rename('validate-form.min.js'))
+  .pipe(dest(paths.js.dest))
+
+})
+
 task('compileCss', () => {
   return src(paths.styles.cssSources)
   .pipe(concat('resources.min.css'))
@@ -147,6 +165,16 @@ task('img-minify', () => {
   .pipe(dest(paths.images.dest))
 })
 
+task('compileFavicon', () => {
+  return(src(paths.favicon.files))
+  .pipe(dest(paths.favicon.dest))
+})
+
+task('compileMail', () => {
+  return(src(paths.mail.files))
+  .pipe(dest(paths.mail.dest))
+})
+
 task('startServer', (done) => {
   server({
     server: 'app/',
@@ -170,8 +198,8 @@ task('packaged', () => {
   .pipe(dest(paths.package.dest))
 })
 
-task('default', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs', 'compileFonts', 'compileAudio', 'compileVideo'), 'clean', 'startServer', 'watch'))
+task('default', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'validateForm', 'compileCss', 'compileJs', 'compileFonts', 'compileAudio', 'compileVideo', 'compileFavicon', 'compileMail'), 'clean', 'startServer', 'watch'))
 
-task('build', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'compileCss', 'compileJs', 'compileFonts', 'compileAudio', 'compileVideo')))
+task('build', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'validateForm', 'compileCss', 'compileJs', 'compileFonts', 'compileAudio', 'compileVideo', 'compileFavicon', 'compileMail')))
 
 task('production', series('build', 'packaged'))

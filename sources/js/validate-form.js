@@ -5,10 +5,10 @@ $('#input-phone').on('input', function () {
 });
 
 
-let btnForm = $("#button-form");
+let btnSubmit = $("#button-form");
 let form = $("#form-contact-itzaez");
 
-btnForm.on('click', function(e){
+btnSubmit.on('click', function(e){
   e.preventDefault();
 
   let error = false;
@@ -67,17 +67,18 @@ btnForm.on('click', function(e){
 
   if(error == false){
 
-    btnForm.attr('disabled', 'true').text('Enviando información...');
-    
-    // $.post("mail/enviar-mail.php", $("#form-contact-cade").serialize(),function(result){
-    //   if(result !== 'sent'){
-    //     messageSendOk.fadeIn();
-    //     btnForm.attr('disabled', 'true').text('Enviado');
-    //     setTimeout (function(){window.location.href='index.html'}, 4000);
-    //   }else{                    
-    //     messageSendError.fadeIn();
-    //   }
-    // });
+    btnSubmit.attr('disabled', 'true').text('Enviando información...');
+
+    $.post("../mail/enviar-mail.php", $("#form-contact-itzaez").serialize(),function(result){
+      if(result !== 'sent'){
+        messageSendOk.fadeIn();
+        btnSubmit.attr('disabled', 'true').text('Enviado');
+        setTimeout (function(){window.location.href='index.html'}, 4000);
+      }else{                    
+        messageSendError.fadeIn();
+      }
+    });
   }
 
 })
+
