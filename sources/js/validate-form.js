@@ -20,13 +20,17 @@ btnSubmit.on('click', function(e){
   let val_timetable = $("#input-timetable").val();
   let val_message = $("#textarea-message").val();
 
+  
   let inputForm = $(".input-form");
-
+  
   let name_input = $('#input-name');
   let email_input = $('#input-email');
   let phone_input = $('#input-phone');
   // let subject_input = $('#input-subject')
   // let timetable_input =$('#input-timetable')
+  
+  let captcha = $('#captcha')
+  let response_captcha = grecaptcha.getResponse();
 
   let messageSendOk = $(".send-message-ok");
   let messageSendError = $(".send-message-error");
@@ -56,6 +60,13 @@ btnSubmit.on('click', function(e){
   }else {
     phone_input.siblings('.error-message').fadeOut();
     phone_input.removeClass('error-input');
+  }
+
+  if(response_captcha.length == 0){
+    error = true;
+    captcha.siblings('.error-message').fadeIn();
+  }else {
+    captcha.siblings('.error-message').fadeOut();
   }
 
   inputForm.on('focusout', function(){

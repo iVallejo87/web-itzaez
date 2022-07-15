@@ -24,6 +24,7 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="css/resources.min.css">
   <link rel="stylesheet" href="css/styles.min.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <div id="inicio"></div>
@@ -641,6 +642,12 @@
                     <!-- <div class="contact-form__error error-message">
                       <p>Este campo es obligatorio</p>
                     </div> -->
+                  </div>
+                </div>
+                <div class="contact-form__group">
+                  <div id="captcha" class="g-recaptcha" data-sitekey="6LcMVPMgAAAAAHx8zcmkNlvJ0n2TDYegJX0kbgak"></div>
+                  <div class="contact-form__error contact-form__error--center error-message">
+                    <p>Por favor verifica el Captcha</p>
                   </div>
                 </div>
                 <div class="contact-form__group contact-form__group--button">

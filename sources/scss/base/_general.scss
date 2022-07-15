@@ -4,3 +4,9 @@ body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
 }
+
+div.g-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin-top: rem(24px);
+}
