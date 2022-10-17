@@ -71,6 +71,10 @@ const paths = {
     files: `${source}mail-form/**`,
     dest: `${output}mail`
   },
+  pdf: {
+    files:`${source}docs/**`,
+    dest: `${output}docs`
+  },
   package: {
     src: 'app/**/*',
     dest: 'public/'
@@ -175,6 +179,11 @@ task('compileMail', () => {
   .pipe(dest(paths.mail.dest))
 })
 
+task('pdf', () => {
+  return(src(paths.pdf.files))
+  .pipe(dest(paths.pdf.dest))
+})
+
 task('startServer', (done) => {
   server({
     server: 'app/',
@@ -200,6 +209,6 @@ task('packaged', () => {
 
 task('default', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'validateForm', 'compileCss', 'compileJs', 'compileFonts', 'compileAudio', 'compileVideo', 'compileFavicon', 'compileMail'), 'clean', 'startServer', 'watch'))
 
-task('build', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'validateForm', 'compileCss', 'compileJs', 'compileFonts', 'compileAudio', 'compileVideo', 'compileFavicon', 'compileMail')))
+task('build', series('cleanApp', parallel('html', 'styles', 'img-minify', 'mainJs', 'validateForm', 'compileCss', 'compileJs', 'compileFonts', 'compileAudio', 'compileVideo', 'compileFavicon', 'compileMail', 'pdf')))
 
 task('production', series('build', 'packaged'))

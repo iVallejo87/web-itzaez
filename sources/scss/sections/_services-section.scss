@@ -4,6 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-flow: column-reverse;
+  overflow-y: hidden;
   &__left {
     width: 100%;
   }

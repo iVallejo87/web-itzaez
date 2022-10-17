@@ -328,6 +328,17 @@
   &__text {
     @include text();
   }
+  &__link {
+    display: block;
+    width: 300px;
+    color: $blue-itzaez;
+    font-size: rem(12px);
+    padding: rem(12px) 0;
+    text-decoration: none;
+    &:hover {
+      opacity: .7;
+    }
+  }
   .owl-dots {
     bottom: -40px;
     .owl-dot {

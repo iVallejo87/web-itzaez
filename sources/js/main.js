@@ -6,6 +6,12 @@ btnPrevent.on('click', function(e) {
 
 // SLIDERS
 
+let dots = $(".owl-dots");
+
+dots.on('click', 'button', function(e) {
+  e.preventDefault();
+})
+
 let topSlide = $("#hero-slider").owlCarousel({
   autoplay: true,
   loop: true,
