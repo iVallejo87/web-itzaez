@@ -54,3 +54,12 @@
     font-weight: 700;
   }
 }
+
+.small-section {
+  display: block;
+  @include media-query(md) {
+    width: 90%;
+    margin: 0 auto;
+    // margin-bottom: rem(16px);
+  }
+}
