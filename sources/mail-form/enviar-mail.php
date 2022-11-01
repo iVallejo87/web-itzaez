@@ -22,16 +22,17 @@ try {
     $mail->CharSet = 'UTF-8';
     $mail->SMTPDebug = SMTP::DEBUG_SERVER; // Enable verbose debug output
     $mail->isSMTP(); // Send using SMTP
-    $mail->Host  = 'mail.isdesignmx.com'; // Set the SMTP server to send through
+    $mail->Host  = 'vm02.digitalserver.org'; // Set the SMTP server to send through
     $mail->SMTPAuth = true; // Enable SMTP authentication
-    $mail->Username = 'mail@isdesignmx.com'; // SMTP username
-    $mail->Password = '1q2w3e4r'; // SMTP password
+    $mail->SMTPSecure = "tls";
+    $mail->Username = 'config-mail@cajaitzaez.mx'; // SMTP username
+    $mail->Password = '1q2w3e4r-!@'; // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port = 587; // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('mail@isdesignmx.com', $name);
-    $mail->addAddress('isaac@isdesignmx.com'); // Add a recipient
+    $mail->setFrom('config-mail@cajaitzaez.mx', $name);
+    $mail->addAddress('contacto_itzaez@cajaitzaez.mx'); // Add a recipient
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
     // $mail->addBCC('bcc@example.com');
@@ -43,7 +44,7 @@ try {
     // Content
     $mail->WordWrap = 50; 
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Contacto desde sitio cajaitzaez.com.mx';
+    $mail->Subject = 'Contacto desde sitio cajaitzaez.mx';
     $mail->Body = $body;
     
     $mail->send();
